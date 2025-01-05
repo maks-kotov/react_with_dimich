@@ -1,0 +1,12 @@
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.header {
+  background-color: pink;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,15 @@
+.avaAndDesc {
+  display: flex;
+  gap: 30px;
+}
+.ava {
+  max-height: 100px;
+  max-width: 133px;
+}
+.desc {
+font-size: 16px;
+}
+.desc__name {
+  font-size: 20px;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,22 @@
+.post {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.circle {
+  background-color: coral;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.likesCount {
+  margin-left: 20px;
+}
+.heart {
+  color: red;
+  font-size: 20px;
+}
+.countLikes {
+  font-size: 10px;
+}
+  
