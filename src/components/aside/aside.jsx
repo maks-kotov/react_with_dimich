@@ -1,21 +1,22 @@
+import { NavLink } from 'react-router-dom';
 import classes from './aside.module.css'
 const Aside = () => {
     return (
         <aside className={classes.aside}>
           <div>
-            <a href="#">Profile</a>
+            <NavLink to="/main" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Profile</NavLink>
           </div>
           <div>
-            <a href="#">Messages</a>
+            <NavLink to="/messages" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Messages</NavLink>
           </div>
           <div>
-            <a href="#">News</a>
+            <NavLink to="/news" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>News</NavLink>
           </div>
           <div>
-            <a href="#">Music</a>
+            <NavLink to="/music" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Music</NavLink>
           </div>
           <div className={classes.settings}>
-            <a href="#">Settings</a>
+            <NavLink to="/settings" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Settings</NavLink>
           </div>
         </aside>
     )

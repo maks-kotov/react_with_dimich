@@ -2,10 +2,14 @@
   background-color: coral;
   padding: 5px 10px;
   font-size: 20px;
+  min-height: 90vh;
 }
 .aside a {
   color: #fff;
   text-decoration: none;
+}
+.aside a.active {
+  text-decoration: underline ;
 }
 .settings {
   margin-top: 30px;

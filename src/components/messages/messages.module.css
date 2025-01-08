@@ -1,0 +1,29 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.chats {
+    border-right: 1px solid rgb(119, 119, 119);
+}
+.messages {
+    
+}
+.dialogs {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(119, 119, 119);
+}
+.ListItem {
+    padding: 20px 0;
+    font-size: 16px;
+    color: rgb(119, 119, 119);
+}
+.ListItem a {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+}
+.activeEl {
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(87, 87, 87) !important; 
+}
