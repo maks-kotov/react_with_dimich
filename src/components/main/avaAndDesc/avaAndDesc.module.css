@@ -1,6 +1,7 @@
 .avaAndDesc {
   display: flex;
   gap: 30px;
+  padding: 0 10px;
 }
 .ava {
   max-height: 100px;
