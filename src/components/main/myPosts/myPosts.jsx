@@ -6,6 +6,8 @@ const MyPosts = () => {
     {myText: 'i cheepful now', countLikes: '2', id: 1},
     {myText: 'i am coder', countLikes: '999', id: 2}
   ]
+  const postElements = postData.map(post => <Post myText={post.myText} countLikes={post.countLikes} id={post.id}></Post>)
+
   return (
     <div className={classes.myPostsContainer}>
       <div className={classes.myPosts}>My posts</div>
@@ -16,9 +18,8 @@ const MyPosts = () => {
         ></textarea>
         <button className={classes.button}>Send</button>
       </form>
-      <Post myText={postData[0].myText} countLikes={postData[0].countLikes}></Post>
-      <Post myText={postData[1].myText} countLikes={postData[1].countLikes}></Post>
-      <Post myText={postData[2].myText} countLikes={postData[2].countLikes}></Post>
+      
+      {postElements}
 
     </div>
   );

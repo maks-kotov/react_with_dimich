@@ -1,0 +1,14 @@
+.ListItem {
+    padding: 20px 0;
+    font-size: 16px;
+    color: rgb(119, 119, 119);
+}
+.ListItem a {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+}
+.activeEl {
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(87, 87, 87) !important; 
+}
