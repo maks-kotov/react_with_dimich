@@ -11,11 +11,20 @@ const postData = [
   {myText: 'i cheepful now', countLikes: '2', id: 1},
   {myText: 'i am coder', countLikes: '999', id: 2}
 ]
+const names = [
+  {name: 'Andrew', id: 1, path: '/messages/andrew'},
+  {name: 'Dmitry', id: 2, path: '/messages/dmitry'},
+  {name: 'Sasha', id: 3, path: '/messages/sasha'},
+  {name: 'Sveta', id: 4, path: '/messages/sveta'},
+  {name: 'Valera', id: 5, path: '/messages/valera'},
+  {name: 'Victor', id: 6, path: '/messages/victor'},
+  {name: 'Mason', id: 7, path: '/messages/mason'},
+  {name: 'Oleg', id: 8, path: '/messages/oleg'},]
 
 root.render(
   <React.StrictMode>
     
-    <App postsss={postData}/>
+    <App postsss={postData} namess={names}/>
   </React.StrictMode>
 );
 

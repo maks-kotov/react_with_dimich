@@ -18,7 +18,7 @@ const App = (props) => {
           <Routes>
             <Route path="/" element={<Main postss={props.postsss}/>} />
             <Route path="/main" element={<Main postss={props.postsss}/>} />
-            <Route path="/messages" element={<Messages/>} />
+            <Route path="/messages" element={<Messages names={props.namess}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
@@ -27,7 +27,7 @@ const App = (props) => {
 
 
            
-            <Route path='/messages/andrew' element={<Messages 
+            <Route path='/messages/andrew' element={<Messages names={props.namess} 
             text1='I am a normal popower and i can have text and everything'
             text2='I am a normal pBlabllbl i can have text and everything'
             text3='I am a normal popower and i can have text and everything'
@@ -36,7 +36,7 @@ const App = (props) => {
             name2='Me'
             name3='Me'
             name4='Andrew'/>}/>
-            <Route path='/messages/dmitry' element={<Messages 
+            <Route path='/messages/dmitry' element={<Messages names={props.namess} 
             text1='я диман'
             text2='вуссап'
             text3='я масон'
@@ -45,7 +45,7 @@ const App = (props) => {
             name2='Me'
             name3='Me'
             name4='Dmitry'/>}/>
-            <Route path='/messages/sasha' element={<Messages 
+            <Route path='/messages/sasha' element={<Messages names={props.namess} 
             text1='я sasha'
             text2='вуссап'
             text3='я масоnnn'
@@ -54,7 +54,7 @@ const App = (props) => {
             name2='Me'
             name3='Me'
             name4='Sasha'/>}/>
-            <Route path='/messages/sveta' element={<Messages 
+            <Route path='/messages/sveta' element={<Messages names={props.namess} 
             text1='hello'
             text2='nice to meet you'
             text3='how are you?'
@@ -63,7 +63,7 @@ const App = (props) => {
             name2='Me'
             name3='Me'
             name4='Sveta'/>}/>
-            <Route path='/messages/valera' element={<Messages 
+            <Route path='/messages/valera' element={<Messages names={props.namess} 
             text1='валер'
             text2='чё'
             text3='валер'
@@ -72,7 +72,7 @@ const App = (props) => {
             name2='Me'
             name3='Me'
             name4='Valera'/>}/>
-            <Route path='/messages/victor' element={<Messages 
+            <Route path='/messages/victor' element={<Messages names={props.namess} 
             text1='здарова масон'
             text2='здарова виктор'
             text3='как оно'
@@ -81,7 +81,7 @@ const App = (props) => {
             name2='Me'
             name3='Me'
             name4='Victor'/>}/>
-            <Route path='/messages/mason' element={<Messages 
+            <Route path='/messages/mason' element={<Messages names={props.namess} 
             text1='я пизжю сам с собой?'
             text2='дану'
             text3='как это возмонжо'
@@ -90,7 +90,7 @@ const App = (props) => {
             name2='Me'
             name3='Me'
             name4='Mason'/>}/>
-            <Route path='/messages/oleg' element={<Messages 
+            <Route path='/messages/oleg' element={<Messages names={props.namess} 
             text1='здарова'
             text2='привет'
             text3='как дела?'

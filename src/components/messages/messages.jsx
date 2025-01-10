@@ -4,17 +4,7 @@ import classes from './messages.module.css'
 
 
 const Messages = (props) => {
-    const names = [
-        {name: 'Andrew', id: 1, path: '/messages/andrew'},
-        {name: 'Dmitry', id: 2, path: '/messages/dmitry'},
-        {name: 'Sasha', id: 3, path: '/messages/sasha'},
-        {name: 'Sveta', id: 4, path: '/messages/sveta'},
-        {name: 'Valera', id: 5, path: '/messages/valera'},
-        {name: 'Victor', id: 6, path: '/messages/victor'},
-        {name: 'Mason', id: 7, path: '/messages/mason'},
-        {name: 'Oleg', id: 8, path: '/messages/oleg'},]
-        // создание jsx элементов с информацией из массива messagesData
-    const namesElements = names
+    const namesElements = props.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} />)
     
     
