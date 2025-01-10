@@ -4,9 +4,14 @@
   align-items: center;
 }
 .circle {
-  background-color: coral;
+  /* background-color: coral; */
   width: 40px;
   height: 40px;
+  border-radius: 100%;
+}
+.postAvatar {
+  max-width: 40px;
+  max-height: 40px;
   border-radius: 100%;
 }
 .likesCount {

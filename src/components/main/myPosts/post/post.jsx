@@ -3,7 +3,9 @@ const Post = (props) => {
     return (
       <div >
         <div className={classes.post}>
-          <div className={classes.circle}></div>
+          <div className={classes.circle}>
+            <img src={props.avatar} alt={props.alt} className={classes.postAvatar}></img>
+          </div>
           <div>{props.myText}</div>
         </div>
         <div className={classes.likesCount}>
