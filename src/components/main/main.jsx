@@ -8,7 +8,7 @@ const Main = (props) => {
         <main className={classes.main}>
             <ImgTop />
             
-            <AvaAndDesc scam='mm' />
+            <AvaAndDesc info={props.info}/>
             
             <MyPosts posts={props.postss}/>
         </main>

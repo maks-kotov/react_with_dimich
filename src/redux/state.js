@@ -32,10 +32,13 @@ const state = {
         ]
     },
     mainPage: {
+        info: [
+            {name: 'mm', dateOfBirth: '2 janiary', city: 'Minsk', education: 'BSU 11', webSite: 'https://it-kamasutra.com', id: 0}
+        ],
         postData: [
-            {myText: 'today is 05.01.2025', countLikes: '1', id: 0},
-            {myText: 'i cheepful now', countLikes: '2', id: 1},
-            {myText: 'i am coder', countLikes: '999', id: 2}
+            {myText: 'today is 05.01.2025', countLikes: '1', id: 0, avatar: ''},
+            {myText: 'i cheepful now', countLikes: '2', id: 1, avatar: ''},
+            {myText: 'i am coder', countLikes: '999', id: 2, avatar: ''}
         ],
     }
     

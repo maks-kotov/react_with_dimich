@@ -6,11 +6,11 @@ const AvaAndDesc = (props) => {
                 <img className={classes.ava} src="https://yt3.googleusercontent.com/G2sIluUKPSeeZHLwoAwzX8smIFyApp-O71N7uogfHFTUw6vggZwR_9npoZ88798NgOMa9OP2=s900-c-k-c0x00ffffff-no-rj" alt="кот"></img>
 
               <div className={classes.desc}>
-                <div className={classes.desc__name}>{props.scam}</div>
-                <div>Date of Birth: 2 janiary</div>
-                <div>City: Minsk</div>
-                <div>Education: BSU 11</div>
-                <div>Web Site: https://it-kamasutra.com</div>
+                <div className={classes.desc__name}>{props.info.name}</div>
+                <div>Date of Birth: {props.info.dateOfBirth}</div>
+                <div>City: {props.info.city}</div>
+                <div>Education: {props.info.education}</div>
+                <div>Web Site: {props.info.webSite}</div>
               </div>
             </div>
     )

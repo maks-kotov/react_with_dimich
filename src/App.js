@@ -16,8 +16,8 @@ const App = (props) => {
         <div className="asideAndMain">
           <Aside />
           <Routes>
-            <Route path="/" element={<Main postss={props.state.mainPage.postData}/>} />
-            <Route path="/main" element={<Main postss={props.state.mainPage.postData}/>} />
+            <Route path="/" element={<Main postss={props.state.mainPage.postData}/>} info={props.state.mainPage.info[0]} />
+            <Route path="/main" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>} />
             <Route path="/messages" element={<Messages names={props.state.messagesPage.names}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
