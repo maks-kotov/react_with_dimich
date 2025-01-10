@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* state - объект из трёх массивов: postData, names и messages */}
-    <App postsss={state.postData} namess={state.names} messages={state.messages}/>
+    <App state={state}/>
     
   </React.StrictMode>
 );
