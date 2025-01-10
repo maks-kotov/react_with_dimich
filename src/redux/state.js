@@ -1,14 +1,14 @@
 const state = {
     messagesPage: {
         names: [
-            {name: 'Andrew', id: 1, path: '/messages/andrew'},
-            {name: 'Dmitry', id: 2, path: '/messages/dmitry'},
-            {name: 'Sasha', id: 3, path: '/messages/sasha'},
-            {name: 'Sveta', id: 4, path: '/messages/sveta'},
-            {name: 'Valera', id: 5, path: '/messages/valera'},
-            {name: 'Victor', id: 6, path: '/messages/victor'},
-            {name: 'Mason', id: 7, path: '/messages/mason'},
-            {name: 'Oleg', id: 8, path: '/messages/oleg'},
+            {name: 'Andrew', id: 1, path: '/messages/andrew', avatar: 'аватарка1.jpg', alt: 'ava'},
+            {name: 'Dmitry', id: 2, path: '/messages/dmitry', avatar: 'ава3.jpg', alt: 'ava'},
+            {name: 'Sasha', id: 3, path: '/messages/sasha', avatar: 'ава9.jpg', alt: 'ava'},
+            {name: 'Sveta', id: 4, path: '/messages/sveta', avatar: 'ава8.jpg', alt: 'ava'},
+            {name: 'Valera', id: 5, path: '/messages/valera', avatar: 'ава5.jpg', alt: 'ava'},
+            {name: 'Victor', id: 6, path: '/messages/victor', avatar: 'ава7.jpg', alt: 'ava'},
+            {name: 'Mm', id: 7, path: '/messages/mason', avatar: 'ава1.jpg', alt: 'ava'},
+            {name: 'Oleg', id: 8, path: '/messages/oleg', avatar: 'ава2.jpg', alt: 'ava'},
         ],
         messages: [
             {text1: 'I am a normal popower and i can have text and everything',
@@ -27,7 +27,8 @@ const state = {
           
             {text1: 'здарова масон', text2: 'здарова виктор', text3: 'как оно', text4: "i am fine niga", name1: 'Victor', name2: 'Me', name3: 'Me', name4: 'Victor'},
           
-            {text1: 'я пизжю сам с собой?', text2: 'дану', text3: 'как это возмонжо', text4: 'nyaaaa', name1: 'Mason', name2: 'Me', name3: 'Me', name4: 'Mason'},
+            {text1: 'hello', text2: 'hello', text3: 'who are you?', text4: 'mm.', name1: 'Mm', name2: 'Me', name3: 'Me', name4: 'Mm'},
+            
             {text1: 'здарова', text2: 'привет', text3: 'как дела?', text4: 'щас расскажу охуеешь', name1: 'Oleg', name2: 'Me', name3: 'Me', name4: 'Oleg'},
         ]
     },
