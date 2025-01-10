@@ -28,77 +28,77 @@ const App = (props) => {
 
            
             <Route path='/messages/andrew' element={<Messages names={props.namess} 
-            text1='I am a normal popower and i can have text and everything'
-            text2='I am a normal pBlabllbl i can have text and everything'
-            text3='I am a normal popower and i can have text and everything'
-            text4='I am a normal popower and i can have text and everything'
-            name1='Andrew'
-            name2='Me'
-            name3='Me'
-            name4='Andrew'/>}/>
+            text1={props.messages[0].text1}
+            text2={props.messages[0].text2}
+            text3={props.messages[0].text3}
+            text4={props.messages[0].text4}
+            name1={props.messages[0].name1}
+            name2={props.messages[0].name2}
+            name3={props.messages[0].name3}
+            name4={props.messages[0].name4}/>}/>
             <Route path='/messages/dmitry' element={<Messages names={props.namess} 
-            text1='я диман'
-            text2='вуссап'
-            text3='я масон'
-            text4='ай эм сэд'
-            name1='Dmitry'
-            name2='Me'
-            name3='Me'
-            name4='Dmitry'/>}/>
+            text1={props.messages[1].text1}
+            text2={props.messages[1].text2}
+            text3={props.messages[1].text3}
+            text4={props.messages[1].text4}
+            name1={props.messages[1].name1}
+            name2={props.messages[1].name2}
+            name3={props.messages[1].name3}
+            name4={props.messages[1].name4}/>}/>
             <Route path='/messages/sasha' element={<Messages names={props.namess} 
-            text1='я sasha'
-            text2='вуссап'
-            text3='я масоnnn'
-            text4="i'm sad"
-            name1='Sasha'
-            name2='Me'
-            name3='Me'
-            name4='Sasha'/>}/>
+            text1={props.messages[2].text1}
+            text2={props.messages[2].text2}
+            text3={props.messages[2].text3}
+            text4={props.messages[2].text4}
+            name1={props.messages[2].name1}
+            name2={props.messages[2].name2}
+            name3={props.messages[2].name3}
+            name4={props.messages[2].name4}/>}/>
             <Route path='/messages/sveta' element={<Messages names={props.namess} 
-            text1='hello'
-            text2='nice to meet you'
-            text3='how are you?'
-            text4="i'm fine"
-            name1='Sveta'
-            name2='Me'
-            name3='Me'
-            name4='Sveta'/>}/>
+            text1={props.messages[3].text1}
+            text2={props.messages[3].text2}
+            text3={props.messages[3].text3}
+            text4={props.messages[3].text4}
+            name1={props.messages[3].name1}
+            name2={props.messages[3].name2}
+            name3={props.messages[3].name3}
+            name4={props.messages[3].name4}/>}/>
             <Route path='/messages/valera' element={<Messages names={props.namess} 
-            text1='валер'
-            text2='чё'
-            text3='валер'
-            text4="настало твоё время"
-            name1='Valera'
-            name2='Me'
-            name3='Me'
-            name4='Valera'/>}/>
+            text1={props.messages[4].text1}
+            text2={props.messages[4].text2}
+            text3={props.messages[4].text3}
+            text4={props.messages[4].text4}
+            name1={props.messages[4].name1}
+            name2={props.messages[4].name2}
+            name3={props.messages[4].name3}
+            name4={props.messages[4].name4}/>}/>
             <Route path='/messages/victor' element={<Messages names={props.namess} 
-            text1='здарова масон'
-            text2='здарова виктор'
-            text3='как оно'
-            text4="i am fine niga"
-            name1='Victor'
-            name2='Me'
-            name3='Me'
-            name4='Victor'/>}/>
+            text1={props.messages[5].text1}
+            text2={props.messages[5].text2}
+            text3={props.messages[5].text3}
+            text4={props.messages[5].text4}
+            name1={props.messages[5].name1}
+            name2={props.messages[5].name2}
+            name3={props.messages[5].name3}
+            name4={props.messages[5].name4}/>}/>
             <Route path='/messages/mason' element={<Messages names={props.namess} 
-            text1='я пизжю сам с собой?'
-            text2='дану'
-            text3='как это возмонжо'
-            text4="nyaaaa"
-            name1='Mason'
-            name2='Me'
-            name3='Me'
-            name4='Mason'/>}/>
+            text1={props.messages[6].text1}
+            text2={props.messages[6].text2}
+            text3={props.messages[6].text3}
+            text4={props.messages[6].text4}
+            name1={props.messages[6].name1}
+            name2={props.messages[6].name2}
+            name3={props.messages[6].name3}
+            name4={props.messages[6].name4}/>}/>
             <Route path='/messages/oleg' element={<Messages names={props.namess} 
-            text1='здарова'
-            text2='привет'
-            text3='как дела?'
-            text4="щас расскажу охуеешь"
-            name1='Oleg'
-            name2='Me'
-            name3='Me'
-            name4='Oleg'/>}/>
+            text1={props.messages[7].text1}
+            text2={props.messages[7].text2}
+            text3={props.messages[7].text3}
+            text4={props.messages[7].text4}
+            name1={props.messages[7].name1}
+            name2={props.messages[7].name2}
+            name3={props.messages[7].name3}
+            name4={props.messages[7].name4}/>}/>
           </Routes>
         </div>
       </div>

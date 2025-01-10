@@ -7,7 +7,6 @@ const Messages = (props) => {
     const namesElements = props.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} />)
     
-    
     return (
         
         <div className={classes.gridContainer}>
