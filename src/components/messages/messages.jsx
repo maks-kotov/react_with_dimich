@@ -13,7 +13,7 @@ const Messages = (props) => {
         {name: 'Victor', id: 6, path: '/messages/victor'},
         {name: 'Mason', id: 7, path: '/messages/mason'},
         {name: 'Oleg', id: 8, path: '/messages/oleg'},]
-        //создание jsx элементов с информацией из массива messagesData
+        // создание jsx элементов с информацией из массива messagesData
     const namesElements = names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} />)
     

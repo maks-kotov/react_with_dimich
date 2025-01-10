@@ -5,10 +5,17 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const postData = [
+  {myText: 'today is 05.01.2025', countLikes: '1', id: 0},
+  {myText: 'i cheepful now', countLikes: '2', id: 1},
+  {myText: 'i am coder', countLikes: '999', id: 2}
+]
+
 root.render(
   <React.StrictMode>
     
-    <App />
+    <App postsss={postData}/>
   </React.StrictMode>
 );
 
