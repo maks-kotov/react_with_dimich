@@ -16,6 +16,7 @@ const Message = (props) => {
         <div>
             <div className={classes.message} style={props.name === 'Me' ? marginLeft : {}}>
                         <div className={classes.circle}>
+                            <img className={classes.avatar} src={props.avatar} alt="" />
                             <div className={classes.name}>{props.name}</div>    
                         </div>    
                         <div className={classes.cloud}>

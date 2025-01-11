@@ -1,7 +1,10 @@
 import ListItem from './listItem/listitem'
 import Message from './message/message'
 import classes from './messages.module.css'
+import ava1 from './аватарка1.jpg'
+import ava2 from './ава1.jpg'
 
+// console.log(ава4);
 
 const Messages = (props) => {
     const namesElements = props.names
@@ -18,10 +21,10 @@ const Messages = (props) => {
             </div>
             
             <div>
-                <Message name={props.messages.name1} text={props.messages.text1}/>     
-                <Message name={props.messages.name2} text={props.messages.text2}/>
-                <Message name={props.messages.name3} text={props.messages.text3}/>
-                <Message name={props.messages.name4} text={props.messages.text4}/>
+                <Message name={props.messages.name1} text={props.messages.text1} avatar={ava1}/>     
+                <Message name={props.messages.name2} text={props.messages.text2} avatar={ava2}/>
+                <Message name={props.messages.name3} text={props.messages.text3} avatar={ava2}/>
+                <Message name={props.messages.name4} text={props.messages.text4} avatar={ava1}/>
             </div>
             
         </div>
