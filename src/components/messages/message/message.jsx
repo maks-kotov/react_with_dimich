@@ -6,11 +6,10 @@ const Message = (props) => {
     }
     
     return (
+
         <div className={classes.message}>
                     <div className={classes.circle}>
-                        <div className={classes.leftEye}></div>    
-                        <div className={classes.rightEye}></div>    
-                        <div className={classes.mounth}></div>           
+                        <img className={classes.avatar} src={props.avatar} alt="" />
                         <div className={classes.name}>{props.name}</div>    
                     </div>    
                     <div className={classes.cloud}>
@@ -19,6 +18,7 @@ const Message = (props) => {
                         <div className={classes.stick2}></div>    
                     </div>    
         </div>
+        
     )
 }
 export default Message;

@@ -10,43 +10,21 @@
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    background-color: rgb(230, 230, 230);
+    /* background-color: rgb(230, 230, 230); */
     position: relative;
     margin-top: -30px;
     text-align: center;
 }
-.leftEye {
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    background-color: #000;
-    top: 15px;
-    left: 12px;
+.avatar {
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
-}
-.rightEye {
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    background-color: #000;
-    top: 15px;
-    left: 30px;
-    border-radius: 100%;
-}
-.mounth {
-    width: 9px;
-    height: 4px;
-    position: absolute;
-    background-color: #000;
-    top: 34px;
-    left: 21px;
-    border-radius: 1%;
 }
 .name {
     color: rgb(119, 119, 119);
     font-size: 18px;
     font-weight: 500;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 .cloud {
     border: 1px solid rgb(209, 209, 209);

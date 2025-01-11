@@ -18,95 +18,27 @@ const App = (props) => {
           <Routes>
             <Route path="/" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>}/>
             <Route path="/main" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>} />
-            <Route path="/messages" element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[8].text1}
-            text2={props.state.messagesPage.messages[8].text2}
-            text3={props.state.messagesPage.messages[8].text3}
-            text4={props.state.messagesPage.messages[8].text4}
-            name1={props.state.messagesPage.messages[8].name1}
-            name2={props.state.messagesPage.messages[8].name2}
-            name3={props.state.messagesPage.messages[8].name3}
-            name4={props.state.messagesPage.messages[8].name4}/>} />
+            <Route path="/messages" element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[8]}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
 
             
-
-
-           
-            <Route path='/messages/andrew' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[0].text1}
-            text2={props.state.messagesPage.messages[0].text2}
-            text3={props.state.messagesPage.messages[0].text3}
-            text4={props.state.messagesPage.messages[0].text4}
-            name1={props.state.messagesPage.messages[0].name1}
-            name2={props.state.messagesPage.messages[0].name2}
-            name3={props.state.messagesPage.messages[0].name3}
-            name4={props.state.messagesPage.messages[0].name4}/>}/>
-            <Route path='/messages/dmitry' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[1].text1}
-            text2={props.state.messagesPage.messages[1].text2}
-            text3={props.state.messagesPage.messages[1].text3}
-            text4={props.state.messagesPage.messages[1].text4}
-            name1={props.state.messagesPage.messages[1].name1}
-            name2={props.state.messagesPage.messages[1].name2}
-            name3={props.state.messagesPage.messages[1].name3}
-            name4={props.state.messagesPage.messages[1].name4}/>}/>
-            <Route path='/messages/sasha' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[2].text1}
-            text2={props.state.messagesPage.messages[2].text2}
-            text3={props.state.messagesPage.messages[2].text3}
-            text4={props.state.messagesPage.messages[2].text4}
-            name1={props.state.messagesPage.messages[2].name1}
-            name2={props.state.messagesPage.messages[2].name2}
-            name3={props.state.messagesPage.messages[2].name3}
-            name4={props.state.messagesPage.messages[2].name4}/>}/>
-            <Route path='/messages/sveta' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[3].text1}
-            text2={props.state.messagesPage.messages[3].text2}
-            text3={props.state.messagesPage.messages[3].text3}
-            text4={props.state.messagesPage.messages[3].text4}
-            name1={props.state.messagesPage.messages[3].name1}
-            name2={props.state.messagesPage.messages[3].name2}
-            name3={props.state.messagesPage.messages[3].name3}
-            name4={props.state.messagesPage.messages[3].name4}/>}/>
-            <Route path='/messages/valera' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[4].text1}
-            text2={props.state.messagesPage.messages[4].text2}
-            text3={props.state.messagesPage.messages[4].text3}
-            text4={props.state.messagesPage.messages[4].text4}
-            name1={props.state.messagesPage.messages[4].name1}
-            name2={props.state.messagesPage.messages[4].name2}
-            name3={props.state.messagesPage.messages[4].name3}
-            name4={props.state.messagesPage.messages[4].name4}/>}/>
-            <Route path='/messages/victor' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[5].text1}
-            text2={props.state.messagesPage.messages[5].text2}
-            text3={props.state.messagesPage.messages[5].text3}
-            text4={props.state.messagesPage.messages[5].text4}
-            name1={props.state.messagesPage.messages[5].name1}
-            name2={props.state.messagesPage.messages[5].name2}
-            name3={props.state.messagesPage.messages[5].name3}
-            name4={props.state.messagesPage.messages[5].name4}/>}/>
-            <Route path='/messages/mason' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[6].text1}
-            text2={props.state.messagesPage.messages[6].text2}
-            text3={props.state.messagesPage.messages[6].text3}
-            text4={props.state.messagesPage.messages[6].text4}
-            name1={props.state.messagesPage.messages[6].name1}
-            name2={props.state.messagesPage.messages[6].name2}
-            name3={props.state.messagesPage.messages[6].name3}
-            name4={props.state.messagesPage.messages[6].name4}/>}/>
-            <Route path='/messages/oleg' element={<Messages names={props.state.messagesPage.names} 
-            text1={props.state.messagesPage.messages[7].text1}
-            text2={props.state.messagesPage.messages[7].text2}
-            text3={props.state.messagesPage.messages[7].text3}
-            text4={props.state.messagesPage.messages[7].text4}
-            name1={props.state.messagesPage.messages[7].name1}
-            name2={props.state.messagesPage.messages[7].name2}
-            name3={props.state.messagesPage.messages[7].name3}
-            name4={props.state.messagesPage.messages[7].name4}/>}/>
+            <Route path='/messages/andrew' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[0]} />}/>
+            <Route path='/messages/dmitry' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[1]}
+            />}/>
+            <Route path='/messages/sasha' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[2]} 
+            />}/>
+            <Route path='/messages/sveta' element={<Messages names={props.state.messagesPage.names}  messages = {props.state.messagesPage.messages[3]}
+            />}/>
+            <Route path='/messages/valera' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[4]}
+            />}/>
+            <Route path='/messages/victor' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[5]}
+            />}/>
+            <Route path='/messages/mason' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[6]}
+            />}/>
+            <Route path='/messages/oleg' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[7]}
+            />}/>
           </Routes>
         </div>
       </div>

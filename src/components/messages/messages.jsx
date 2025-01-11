@@ -18,11 +18,12 @@ const Messages = (props) => {
             </div>
             
             <div>
-                <Message name={props.name1} text={props.text1}/>    
-                <Message name={props.name2} text={props.text2}/>
-                <Message name={props.name3} text={props.text3}/>
-                <Message name={props.name4} text={props.text4}/>
+                <Message name={props.messages.name1} text={props.messages.text1} avatar={props.names[0].avatar}/>     
+                <Message name={props.messages.name2} text={props.messages.text2} avatar={props.names[1].avatar}/>
+                <Message name={props.messages.name3} text={props.messages.text3} avatar={props.names[2].avatar}/>
+                <Message name={props.messages.name4} text={props.messages.text4} avatar='ава2.jpg'/>
             </div>
+            
         </div>
     )
 }
