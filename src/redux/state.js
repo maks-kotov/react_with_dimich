@@ -11,6 +11,7 @@ const state = {
             {name: 'Oleg', id: 8, path: '/messages/oleg', avatar: 'ава2.jpg', alt: 'ava'},
         ],
         messages: [
+            
             {text1: 'I am a normal popower and i can have text and everything',
             text2: 'I am a normal pBlabllbl i can have text and everything',
             text3: 'I am a normal popower and i can have text and everything', 

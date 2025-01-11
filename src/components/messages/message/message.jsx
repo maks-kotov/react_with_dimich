@@ -4,21 +4,27 @@ const Message = (props) => {
     if(props.name === '' && props.text === '') {
         return ''
     }
-    
-    return (
+    const marginLeft = {
+        marginLeft: '250px'
+    }
+  
+    // if(props.name === 'Me') {
+    //     console.log('me');
+    // }
 
-        <div className={classes.message}>
-                    <div className={classes.circle}>
-                        <img className={classes.avatar} src={props.avatar} alt="" />
-                        <div className={classes.name}>{props.name}</div>    
-                    </div>    
-                    <div className={classes.cloud}>
-                        <div className={classes.cloudText}>{props.text}</div>
-                        <div className={classes.stick}></div>    
-                        <div className={classes.stick2}></div>    
-                    </div>    
+    return (
+        <div>
+            <div className={classes.message} style={props.name === 'Me' ? marginLeft : {}}>
+                        <div className={classes.circle}>
+                            <div className={classes.name}>{props.name}</div>    
+                        </div>    
+                        <div className={classes.cloud}>
+                            <div className={classes.cloudText}>{props.text}</div>
+                        </div>    
+            </div>
         </div>
         
     )
+    
 }
 export default Message;

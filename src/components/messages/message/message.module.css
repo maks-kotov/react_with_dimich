@@ -10,7 +10,7 @@
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    /* background-color: rgb(230, 230, 230); */
+    background-color: rgb(230, 230, 230);
     position: relative;
     margin-top: -30px;
     text-align: center;
@@ -24,33 +24,16 @@
     color: rgb(119, 119, 119);
     font-size: 18px;
     font-weight: 500;
-    /* margin-top: 50px; */
+    margin-top: 50px;
 }
 .cloud {
     border: 1px solid rgb(209, 209, 209);
     border-radius: 10px;
     padding: 20px;
     position: relative;
+    width: 250px;
 }
 .cloudText {
     max-width: 220px;
     color: rgb(119, 119, 119);
-}
-.stick {
-    width: 30px;
-    height: 1px;
-    background-color: rgb(119, 119, 119);
-    position: absolute;
-    left: -27px;
-    top: -1px;
-    transform: rotateZ(-38deg);
-}
-.stick2 {
-    width: 30px;
-    height: 1px;
-    background-color: rgb(119, 119, 119);
-    position: absolute;
-    left: -27px;
-    top: 18px;
-    transform: rotateZ(40deg);
 }
