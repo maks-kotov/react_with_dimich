@@ -30,6 +30,8 @@ const state = {
             {text1: 'hello', text2: 'hello', text3: 'who are you?', text4: 'mm.', name1: 'Mm', name2: 'Me', name3: 'Me', name4: 'Mm'},
             
             {text1: 'здарова', text2: 'привет', text3: 'как дела?', text4: 'щас расскажу охуеешь', name1: 'Oleg', name2: 'Me', name3: 'Me', name4: 'Oleg'},
+
+            {text1: '', text2: '', text3: '', text4: '', name1: '', name2: '', name3: '', name4: ''},
         ]
     },
     mainPage: {

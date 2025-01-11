@@ -1,6 +1,10 @@
 import classes from './message.module.css'
 
 const Message = (props) => {
+    if(props.name === '' && props.text === '') {
+        return ''
+    }
+    
     return (
         <div className={classes.message}>
                     <div className={classes.circle}>

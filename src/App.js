@@ -18,7 +18,15 @@ const App = (props) => {
           <Routes>
             <Route path="/" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>}/>
             <Route path="/main" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>} />
-            <Route path="/messages" element={<Messages names={props.state.messagesPage.names}/>} />
+            <Route path="/messages" element={<Messages names={props.state.messagesPage.names} 
+            text1={props.state.messagesPage.messages[8].text1}
+            text2={props.state.messagesPage.messages[8].text2}
+            text3={props.state.messagesPage.messages[8].text3}
+            text4={props.state.messagesPage.messages[8].text4}
+            name1={props.state.messagesPage.messages[8].name1}
+            name2={props.state.messagesPage.messages[8].name2}
+            name3={props.state.messagesPage.messages[8].name3}
+            name4={props.state.messagesPage.messages[8].name4}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

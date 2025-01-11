@@ -4,7 +4,6 @@ import classes from './messages.module.css'
 
 
 const Messages = (props) => {
-    // debugger
     const namesElements = props.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} avatar={name.avatar} alt={name.alt}/>)
     
