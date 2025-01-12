@@ -4,9 +4,36 @@
 }
 .chats {
     border-right: 1px solid rgb(119, 119, 119);
+    /* height: 300px; */
+}
+.list {
+    height: 500px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.messagesContainer {
+    height: 512px;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 .dialogs {
     font-size: 22px;
     font-weight: 500;
     color: rgb(119, 119, 119);
+}
+.form {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.textarea {
+    height: inherit;
+    min-width: 420px;
+}
+.button {
+    height: inherit;
+    width: 125px;
+    background-color: coral;
+    border: none;
+    color: #fff;
 }

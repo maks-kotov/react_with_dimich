@@ -2,7 +2,6 @@ import classes from './aside.module.css'
 import Link from './link/link';
 import AvatarAndName from './avatarAndName/avatarAndName';
 const Aside = (props) => {
-
   return (
         <aside className={classes.aside}>
           

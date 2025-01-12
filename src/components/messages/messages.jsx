@@ -21,23 +21,32 @@ const Messages = (props) => {
     console.log(namesElements[0]);
     
     return (
-        
+        <div>
         <div className={classes.gridContainer}>
             <div className={classes.chats}>
                 <div className={classes.dialogs}>DIALOGS</div>
-                <ul>
+                <ul className={classes.list}>
                     {namesElements}
                 </ul>
             </div>
             
             <div>
-                <Message name={props.messages.name1} text={props.messages.text1} avatar={ava1}/>     
-                <Message name={props.messages.name2} text={props.messages.text2} avatar={ava2}/>
-                <Message name={props.messages.name3} text={props.messages.text3} avatar={ava2}/>
-                <Message name={props.messages.name4} text={props.messages.text4} avatar={ava1}/>
+                <div className={classes.messagesContainer}>
+                    <Message name={props.messages.name1} text={props.messages.text1} avatar={ava1}/>     
+                    <Message name={props.messages.name2} text={props.messages.text2} avatar={ava2}/>
+                    <Message name={props.messages.name3} text={props.messages.text3} avatar={ava2}/>
+                    <Message name={props.messages.name4} text={props.messages.text4} avatar={ava1}/>
+                </div>
+                
+                <form className={classes.form} action="#">
+                    <input className={classes.textarea} />
+                    <button className={classes.button}>Send</button>
+                </form>
             </div>
             
         </div>
+        </div>
+        
     )
 }
 
