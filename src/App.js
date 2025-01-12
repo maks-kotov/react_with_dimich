@@ -14,7 +14,7 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
         <div className="asideAndMain">
-          <Aside avatars={props.state.messagesPage.names}/>
+          <Aside aside={props.state.permEls.aside}/>
           <Routes>
             <Route path="/" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>}/>
             <Route path="/main" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>} />

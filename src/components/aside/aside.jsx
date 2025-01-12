@@ -1,50 +1,26 @@
-import { NavLink } from 'react-router-dom';
 import classes from './aside.module.css'
+import Link from './link/link';
+import AvatarAndName from './avatarAndName/avatarAndName';
 const Aside = (props) => {
-  // debugger
-    return (
+
+  return (
         <aside className={classes.aside}>
-          <div>
-            <NavLink to="/main" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Profile</NavLink>
-          </div>
-          <div>
-            <NavLink to="/messages" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Messages</NavLink>
-          </div>
-          <div>
-            <NavLink to="/news" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>News</NavLink>
-          </div>
-          <div>
-            <NavLink to="/music" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Music</NavLink>
-          </div>
+          
+          <Link to={props.aside.paths[0]} title={props.aside.titles[0]}/>
+          <Link to={props.aside.paths[1]} title={props.aside.titles[1]}/>
+          <Link to={props.aside.paths[2]} title={props.aside.titles[2]}/>
+          <Link to={props.aside.paths[3]} title={props.aside.titles[3]}/>
           <div className={classes.settings}>
-            <NavLink to="/settings" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Settings</NavLink>
+            <Link to={props.aside.paths[4]} title={props.aside.titles[4]}/>
           </div>
 
           <div className={classes.friends}>
-            <NavLink to="/Friends" className={navData=> navData.isActive ? classes.active : classes.yaSsilka}>Friends</NavLink>
+                <Link to={props.aside.paths[5]} title={props.aside.titles[5]}/>
             <div className={classes.mainFlexContainer}>
-              <div className={classes.flexContainer}>
-                  <div className={classes.circle}>
-                    <img className={classes.avatar} src={props.avatars[0].avatar} alt="" />
-                  </div>
-                  <div className={classes.name}>Andrew</div>
-              </div>
-              <div className={classes.flexContainer}>
-                  <div className={classes.circle}>
-                    <img className={classes.avatar} src={props.avatars[2].avatar} alt="" />
-                  </div>
-                  <div className={classes.name}>Sasha</div>
-              </div>
-              <div className={classes.flexContainer}>
-                  <div className={classes.circle}>
-                    <img className={classes.avatar} src={props.avatars[3].avatar} alt="" />
-                  </div>
-                  <div className={classes.name}>Sveta</div>
-              </div>
+                <AvatarAndName name={props.aside.friends[0]} avatar={props.aside.avatars[0]}/>
+                <AvatarAndName name={props.aside.friends[1]} avatar={props.aside.avatars[1]}/>
+                <AvatarAndName name={props.aside.friends[2]} avatar={props.aside.avatars[2]}/>
             </div>
-
-            
-              
           </div>
 
         </aside>

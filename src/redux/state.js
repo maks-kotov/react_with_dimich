@@ -1,4 +1,15 @@
 const state = {
+    globalData: {
+        names: ['Andrew', 'Dmitry', 'Sasha', 'Sveta', 'Valera', 'Victor', 'Mm', 'Oleg']
+    },
+    permEls: {
+        aside: {
+            titles: ['Profile', 'Messages', 'News', 'Music', 'Settings', 'Friends'],
+            paths: ['/main', '/messages', '/news', '/music', '/settings', '/friends'],
+            avatars: ['аватарка1.jpg', 'ава9.jpg', 'ава8.jpg'],
+            friends: ['Andrew', 'Sasha', 'Sveta']
+        }
+    },
     messagesPage: {
         names: [
             {name: 'Andrew', id: 1, path: '/messages/andrew', avatar: 'аватарка1.jpg', alt: 'ava'},
