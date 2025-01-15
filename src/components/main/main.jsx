@@ -3,6 +3,7 @@ import MyPosts from './myPosts/myPosts';
 import AvaAndDesc from './avaAndDesc/avaAndDesc'
 import ImgTop from './imgTop/imgTop'
 const Main = (props) => {
+
     return (
         
         <main className={classes.main}>
@@ -10,7 +11,7 @@ const Main = (props) => {
             
             <AvaAndDesc info={props.info}/>
             
-            <MyPosts posts={props.postss}/>
+            <MyPosts addPost={props.addPost} posts={props.postss}/>
         </main>
     )
 }

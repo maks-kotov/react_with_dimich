@@ -9,6 +9,7 @@ import Settings from "./components/settings/settings";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -16,8 +17,16 @@ const App = (props) => {
         <div className="asideAndMain">
           <Aside aside={props.state.permEls.aside}/>
           <Routes>
-            <Route path="/" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>}/>
-            <Route path="/main" element={<Main postss={props.state.mainPage.postData} info={props.state.mainPage.info[0]}/>} />
+            <Route path="/" element={<Main 
+            postss={props.state.mainPage.postData} 
+            info={props.state.mainPage.info[0]}
+            addPost={props.addPost}
+            />}/>
+            <Route path="/main" element={<Main 
+            postss={props.state.mainPage.postData} 
+            info={props.state.mainPage.info[0]}
+            addPost={props.addPost}
+            />} />
             <Route path="/messages" element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[8]}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />

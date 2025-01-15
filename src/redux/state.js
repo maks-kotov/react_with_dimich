@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 const state = {
     globalData: {
         names: ['Andrew', 'Dmitry', 'Sasha', 'Sveta', 'Valera', 'Victor', 'Mm', 'Oleg']
@@ -53,10 +55,20 @@ const state = {
         postData: [
             {myText: 'today is 05.01.2025', countLikes: '1', id: 0, avatar: 'ава1.jpg', alt: 'кот'},
             {myText: 'i cheepful now', countLikes: '2', id: 1, avatar: 'ава1.jpg', alt: 'кот'},
-            {myText: 'i am coder', countLikes: '999', id: 2, avatar: 'ава1.jpg', alt: 'кот'}
+            {myText: "i'm a coder", countLikes: '999', id: 2, avatar: 'ава1.jpg', alt: 'кот'}
         ],
     }
-    
-    
+}
+
+export function addPost(postText) {
+    let newPost = {
+        myText: postText,
+        countLikes: 5,
+        id: 5,
+        avatar: 'ава1.jpg',
+        alt: 'кот'
+    }
+    state.mainPage.postData.push(newPost)
+    rerenderEntireTree(state)
 }
 export default state;

@@ -3,6 +3,7 @@ import Message from './message/message'
 import classes from './messages.module.css'
 import ava1 from './аватарка1.jpg'
 import ava2 from './ава1.jpg'
+import React from 'react'
 // import ava3 from './ава1.jpg'
 // import ava4 from './ава1.jpg'
 // import ava5 from './ава1.jpg'
@@ -18,7 +19,6 @@ import ava2 from './ава1.jpg'
 const Messages = (props) => {
     const namesElements = props.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} avatar={name.avatar} alt={name.alt}/>)
-    console.log(namesElements[0]);
     
     return (
         <div>

@@ -7,10 +7,6 @@ const Message = (props) => {
     const marginLeft = {
         marginLeft: '250px'
     }
-  
-    // if(props.name === 'Me') {
-    //     console.log('me');
-    // }
 
     return (
         <div>
