@@ -16,8 +16,7 @@ const MyPosts = (props) => {
 
   const writeCurrentValue = () => {
     let write = newPostElement.current.value;
-    props.addSymbol(write)
-    write = props.postValue 
+    props.addSymbolToPost(write)
   }
 
   const addPost = (event) => {

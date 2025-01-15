@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {addPost, addSymbol} from './redux/state';
+import {addPost, addSymbolToMessage, addSymbolToPost} from './redux/state';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 export const rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
-      <App state={state} addPost={addPost} addSymbol={addSymbol}/>
+      <App state={state} addPost={addPost} addSymbolToPost={addSymbolToPost} addSymbolToMessage={addSymbolToMessage}/>
     </React.StrictMode>
   );
 }

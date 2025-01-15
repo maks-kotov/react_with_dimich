@@ -22,16 +22,22 @@ const App = (props) => {
             info={props.state.mainPage.info[0]}
             addPost={props.addPost}
             postValue={props.state.mainPage.postValue}
-            addSymbol={props.addSymbol}
+            addSymbolToPost={props.addSymbolToPost}
             />}/>
             <Route path="/main" element={<Main 
             postss={props.state.mainPage.postData} 
             info={props.state.mainPage.info[0]}
             addPost={props.addPost}
             postValue={props.state.mainPage.postValue}
-            addSymbol={props.addSymbol}
+            addSymbolToPost={props.addSymbolToPost}
             />} />
-            <Route path="/messages" element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[8]}/>} />
+            <Route 
+            path="/messages" 
+            element={<Messages 
+            names={props.state.messagesPage.names}
+            messages = {props.state.messagesPage.messages[8]}
+            addSymbolToMessage={props.addSymbolToMessage}
+            />}/>
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

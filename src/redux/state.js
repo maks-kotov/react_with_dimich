@@ -46,7 +46,8 @@ const state = {
             {text1: 'здарова', text2: 'привет', text3: 'как дела?', text4: 'щас расскажу охуеешь', name1: 'Oleg', name2: 'Me', name3: 'Me', name4: 'Oleg'},
 
             {text1: '', text2: '', text3: '', text4: '', name1: '', name2: '', name3: '', name4: ''},
-        ]
+        ],
+        currentValue: 'aaa'
     },
     mainPage: {
         info: [
@@ -72,8 +73,12 @@ export function addPost() {
     state.mainPage.postValue = ''
     rerenderEntireTree(state)
 }
-export function addSymbol(receivedWord) {
+export function addSymbolToPost(receivedWord) {
     state.mainPage.postValue = receivedWord 
+    rerenderEntireTree(state)
+}
+export function addSymbolToMessage(receivedWord) {
+    state.messagesPage.currentValue = receivedWord 
     rerenderEntireTree(state)
 }
 export default state;

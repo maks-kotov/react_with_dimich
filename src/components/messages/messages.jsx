@@ -19,6 +19,11 @@ import React from 'react'
 const Messages = (props) => {
     const namesElements = props.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} avatar={name.avatar} alt={name.alt}/>)
+    const input = React.createRef()
+    const addSymbol = () => {
+        const inputText = input.current.value
+        props.addSymbolToMessage(inputText)
+    }
     
     return (
         <div>
@@ -39,7 +44,7 @@ const Messages = (props) => {
                 </div>
                 
                 <form className={classes.form} action="#">
-                    <input className={classes.textarea} />
+                    <input onInput={addSymbol} className={classes.textarea} value={props.currentValue} ref={input}/>
                     <button className={classes.button}>Send</button>
                 </form>
             </div>
