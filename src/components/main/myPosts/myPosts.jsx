@@ -18,13 +18,10 @@ const MyPosts = (props) => {
     let write = newPostElement.current.value;
     props.addSymbol(write)
     write = props.postValue 
-    console.log(props);
   }
 
   const addPost = (event) => {
-    let text = newPostElement.current.value;
-    props.addPost(text)
-    newPostElement.current.value = ''
+    props.addPost()
     event.preventDefault()
   };
 

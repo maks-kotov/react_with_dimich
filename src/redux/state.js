@@ -57,19 +57,19 @@ const state = {
             {myText: 'i cheepful now', countLikes: '2', id: 1, avatar: 'ава1.jpg', alt: 'кот'},
             {myText: "i'm a coder", countLikes: '999', id: 2, avatar: 'ава1.jpg', alt: 'кот'}
         ],
-        postValue: ''
+        postValue: '',
     }
 }
-
-export function addPost(postText) {
+export function addPost() {
     let newPost = {
-        myText: postText,
+        myText: state.mainPage.postValue,
         countLikes: 5,
         id: 5,
         avatar: 'ава1.jpg',
         alt: 'кот',
     }
     state.mainPage.postData.push(newPost)
+    state.mainPage.postValue = ''
     rerenderEntireTree(state)
 }
 export function addSymbol(receivedWord) {
