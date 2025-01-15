@@ -13,11 +13,19 @@ const MyPosts = (props) => {
   ));
 
   let newPostElement = React.createRef();
+
+  const writeCurrentValue = () => {
+    let write = newPostElement.current.value;
+    props.addSymbol(write)
+    write = props.postValue 
+    console.log(props);
+  }
+
   const addPost = (event) => {
     let text = newPostElement.current.value;
     props.addPost(text)
+    newPostElement.current.value = ''
     event.preventDefault()
-    
   };
 
   return (
@@ -28,7 +36,9 @@ const MyPosts = (props) => {
           className={classes.textarea}
           placeholder="your news..."
           ref={newPostElement}
-        ></textarea>
+          onInput={writeCurrentValue}
+          value={props.postValue} 
+        />
         <button onClick={addPost} className={classes.button}>
           Add post
         </button>

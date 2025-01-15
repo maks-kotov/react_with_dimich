@@ -11,7 +11,7 @@ const Main = (props) => {
             
             <AvaAndDesc info={props.info}/>
             
-            <MyPosts addPost={props.addPost} posts={props.postss}/>
+            <MyPosts postValue={props.postValue} addPost={props.addPost} addSymbol={props.addSymbol} posts={props.postss}/>
         </main>
     )
 }
