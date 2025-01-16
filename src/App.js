@@ -9,54 +9,45 @@ import Settings from "./components/settings/settings";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 const App = (props) => {
-
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <div className="asideAndMain">
-          <Aside aside={props.state.permEls.aside}/>
+          <Aside aside={props.store._state.permEls.aside}/>
           <Routes>
             <Route path="/" element={<Main 
-            postss={props.state.mainPage.postData} 
-            info={props.state.mainPage.info[0]}
-            addPost={props.addPost}
-            postValue={props.state.mainPage.postValue}
-            addSymbolToPost={props.addSymbolToPost}
+              state={props.state}
+              store={props.store}
             />}/>
             <Route path="/main" element={<Main 
-            postss={props.state.mainPage.postData} 
-            info={props.state.mainPage.info[0]}
-            addPost={props.addPost}
-            postValue={props.state.mainPage.postValue}
-            addSymbolToPost={props.addSymbolToPost}
-            />} />
-            <Route 
-            path="/messages" 
+              state={props.state}
+              store={props.store}
+            />}/>
+            <Route path="/messages" 
             element={<Messages 
-            names={props.state.messagesPage.names}
-            messages = {props.state.messagesPage.messages[8]}
-            addSymbolToMessage={props.addSymbolToMessage}
+              store={props.store}
+              state={props.state}
             />}/>
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
 
             
-            <Route path='/messages/andrew' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[0]} />}/>
-            <Route path='/messages/dmitry' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[1]}
+            <Route path='/messages/andrew' element={<Messages names={props.store._state.messagesPage.names} messages = {props.store._state.messagesPage.messages[0]} addSymbolToMessage={props.store.addSymbolToMessage}/>}/>
+            <Route path='/messages/dmitry' element={<Messages names={props.store._state.messagesPage.names} messages = {props.store._state.messagesPage.messages[1]} addSymbolToMessage={props.store.addSymbolToMessage}
             />}/>
-            <Route path='/messages/sasha' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[2]} 
+            <Route path='/messages/sasha' element={<Messages names={props.store._state.messagesPage.names} messages = {props.store._state.messagesPage.messages[2]} addSymbolToMessage={props.store.addSymbolToMessage}
             />}/>
-            <Route path='/messages/sveta' element={<Messages names={props.state.messagesPage.names}  messages = {props.state.messagesPage.messages[3]}
+            <Route path='/messages/sveta' element={<Messages names={props.store._state.messagesPage.names}  messages = {props.store._state.messagesPage.messages[3]} addSymbolToMessage={props.store.addSymbolToMessage}
             />}/>
-            <Route path='/messages/valera' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[4]}
+            <Route path='/messages/valera' element={<Messages names={props.store._state.messagesPage.names} messages = {props.store._state.messagesPage.messages[4]} addSymbolToMessage={props.store.addSymbolToMessage}
             />}/>
-            <Route path='/messages/victor' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[5]}
+            <Route path='/messages/victor' element={<Messages names={props.store._state.messagesPage.names} messages = {props.store._state.messagesPage.messages[5]} addSymbolToMessage={props.store.addSymbolToMessage}
             />}/>
-            <Route path='/messages/mason' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[6]}
+            <Route path='/messages/mason' element={<Messages names={props.store._state.messagesPage.names} messages = {props.store._state.messagesPage.messages[6]} addSymbolToMessage={props.store.addSymbolToMessage}
             />}/>
-            <Route path='/messages/oleg' element={<Messages names={props.state.messagesPage.names} messages = {props.state.messagesPage.messages[7]}
+            <Route path='/messages/oleg' element={<Messages names={props.store._state.messagesPage.names} messages = {props.store._state.messagesPage.messages[7]} addSymbolToMessage={props.store.addSymbolToMessage}
             />}/>
           </Routes>
         </div>

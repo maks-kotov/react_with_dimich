@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./myPosts.module.css";
 import Post from "./post/post";
 const MyPosts = (props) => {
-  const postElements = props.posts.map( post => (
+  const postElements = props.state.mainPage.postData.map( post => (
     <Post
       myText={post.myText}
       countLikes={post.countLikes}
@@ -15,12 +15,12 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   const writeCurrentValue = () => {
-    let write = newPostElement.current.value;
-    props.addSymbolToPost(write)
+    let symbol = newPostElement.current.value;
+    props.store.addSymbolToPost(symbol)
   }
 
   const addPost = (event) => {
-    props.addPost()
+    props.store.addPost()
     event.preventDefault()
   };
 
@@ -33,7 +33,7 @@ const MyPosts = (props) => {
           placeholder="your news..."
           ref={newPostElement}
           onInput={writeCurrentValue}
-          value={props.postValue} 
+          value={props.state.mainPage.postValue} 
         />
         <button onClick={addPost} className={classes.button}>
           Add post

@@ -1,89 +1,95 @@
-let rerenderEntireTree = () => {
-    console.log('state changed');
+const store = {
+    _state:  {
+        globalData: {
+            names: ['Andrew', 'Dmitry', 'Sasha', 'Sveta', 'Valera', 'Victor', 'Mm', 'Oleg']
+        },
+        permEls: {
+            aside: {
+                titles: ['Profile', 'Messages', 'News', 'Music', 'Settings', 'Friends'],
+                paths: ['/main', '/messages', '/news', '/music', '/settings', '/friends'],
+                avatars: ['аватарка1.jpg', 'ава9.jpg', 'ава8.jpg'],
+                friends: ['Andrew', 'Sasha', 'Sveta']
+            }
+        },
+        messagesPage: {
+            names: [
+                {name: 'Andrew', id: 1, path: '/messages/andrew', avatar: 'аватарка1.jpg', alt: 'ava'},
+                {name: 'Dmitry', id: 2, path: '/messages/dmitry', avatar: 'ава3.jpg', alt: 'ava'},
+                {name: 'Sasha', id: 3, path: '/messages/sasha', avatar: 'ава9.jpg', alt: 'ava'},
+                {name: 'Sveta', id: 4, path: '/messages/sveta', avatar: 'ава8.jpg', alt: 'ava'},
+                {name: 'Valera', id: 5, path: '/messages/valera', avatar: 'ава5.jpg', alt: 'ava'},
+                {name: 'Victor', id: 6, path: '/messages/victor', avatar: 'ава7.jpg', alt: 'ava'},
+                {name: 'Mm', id: 7, path: '/messages/mason', avatar: 'ава1.jpg', alt: 'ava'},
+                {name: 'Oleg', id: 8, path: '/messages/oleg', avatar: 'ава2.jpg', alt: 'ava'},
+            ],
+            messages: [
+                
+                {text1: 'I am a normal popower and i can have text and everything',
+                text2: 'I am a normal pBlabllbl i can have text and everything',
+                text3: 'I am a normal popower and i can have text and everything', 
+                text4: 'I am a normal popower and i can have text and everything', 
+                name1: 'Andrew', name2: 'Me', name3: 'Me', name4: 'Andrew'},
+              
+                {text1: 'я диман', text2: 'вуссап', text3: 'я масон', text4: 'ай эм сэд', name1: 'Dmitry', name2: 'Me', name3: 'Me', name4: 'Dmitry'},
+              
+                {text1: 'я sasha', text2: 'вуссап', text3: 'я масон', text4: "i'm sad", name1: 'Sasha', name2: 'Me', name3: 'Me', name4: 'Sasha'},
+              
+                {text1: 'hello', text2: 'nice to meet you', text3: 'how are you?', text4: "i'm fine", name1: 'Sveta', name2: 'Me', name3: 'Me', name4: 'Sveta'},
+              
+                {text1: 'валер', text2: 'чё', text3: 'валер', text4: 'настало твоё время', name1: 'Valera', name2: 'Me', name3: 'Me', name4: 'Valera'},
+              
+                {text1: 'здарова масон', text2: 'здарова виктор', text3: 'как оно', text4: "i am fine niga", name1: 'Victor', name2: 'Me', name3: 'Me', name4: 'Victor'},
+              
+                {text1: 'hello', text2: 'hello', text3: 'who are you?', text4: 'mm.', name1: 'Mm', name2: 'Me', name3: 'Me', name4: 'Mm'},
+                
+                {text1: 'здарова', text2: 'привет', text3: 'как дела?', text4: 'щас расскажу охуеешь', name1: 'Oleg', name2: 'Me', name3: 'Me', name4: 'Oleg'},
     
-}
-const state = {
-    globalData: {
-        names: ['Andrew', 'Dmitry', 'Sasha', 'Sveta', 'Valera', 'Victor', 'Mm', 'Oleg']
-    },
-    permEls: {
-        aside: {
-            titles: ['Profile', 'Messages', 'News', 'Music', 'Settings', 'Friends'],
-            paths: ['/main', '/messages', '/news', '/music', '/settings', '/friends'],
-            avatars: ['аватарка1.jpg', 'ава9.jpg', 'ава8.jpg'],
-            friends: ['Andrew', 'Sasha', 'Sveta']
+                {text1: '', text2: '', text3: '', text4: '', name1: '', name2: '', name3: '', name4: ''},
+            ],
+            currentValue: ''
+        },
+        mainPage: {
+            info: [
+                {name: 'mm', avatar: 'ава1.jpg', alt: 'кот', dateOfBirth: '2 janiary', city: 'Minsk', education: 'BSU 11', webSite: 'https://it-kamasutra.com', id: 0}
+            ],
+            postData: [
+                {myText: 'today is 05.01.2025', countLikes: '1', id: 0, avatar: 'ава1.jpg', alt: 'кот'},
+                {myText: 'i cheepful now', countLikes: '2', id: 1, avatar: 'ава1.jpg', alt: 'кот'},
+                {myText: "i'm a coder", countLikes: '999', id: 2, avatar: 'ава1.jpg', alt: 'кот'}
+            ],
+            postValue: '',
         }
     },
-    messagesPage: {
-        names: [
-            {name: 'Andrew', id: 1, path: '/messages/andrew', avatar: 'аватарка1.jpg', alt: 'ava'},
-            {name: 'Dmitry', id: 2, path: '/messages/dmitry', avatar: 'ава3.jpg', alt: 'ava'},
-            {name: 'Sasha', id: 3, path: '/messages/sasha', avatar: 'ава9.jpg', alt: 'ava'},
-            {name: 'Sveta', id: 4, path: '/messages/sveta', avatar: 'ава8.jpg', alt: 'ava'},
-            {name: 'Valera', id: 5, path: '/messages/valera', avatar: 'ава5.jpg', alt: 'ava'},
-            {name: 'Victor', id: 6, path: '/messages/victor', avatar: 'ава7.jpg', alt: 'ava'},
-            {name: 'Mm', id: 7, path: '/messages/mason', avatar: 'ава1.jpg', alt: 'ava'},
-            {name: 'Oleg', id: 8, path: '/messages/oleg', avatar: 'ава2.jpg', alt: 'ava'},
-        ],
-        messages: [
-            
-            {text1: 'I am a normal popower and i can have text and everything',
-            text2: 'I am a normal pBlabllbl i can have text and everything',
-            text3: 'I am a normal popower and i can have text and everything', 
-            text4: 'I am a normal popower and i can have text and everything', 
-            name1: 'Andrew', name2: 'Me', name3: 'Me', name4: 'Andrew'},
-          
-            {text1: 'я диман', text2: 'вуссап', text3: 'я масон', text4: 'ай эм сэд', name1: 'Dmitry', name2: 'Me', name3: 'Me', name4: 'Dmitry'},
-          
-            {text1: 'я sasha', text2: 'вуссап', text3: 'я масон', text4: "i'm sad", name1: 'Sasha', name2: 'Me', name3: 'Me', name4: 'Sasha'},
-          
-            {text1: 'hello', text2: 'nice to meet you', text3: 'how are you?', text4: "i'm fine", name1: 'Sveta', name2: 'Me', name3: 'Me', name4: 'Sveta'},
-          
-            {text1: 'валер', text2: 'чё', text3: 'валер', text4: 'настало твоё время', name1: 'Valera', name2: 'Me', name3: 'Me', name4: 'Valera'},
-          
-            {text1: 'здарова масон', text2: 'здарова виктор', text3: 'как оно', text4: "i am fine niga", name1: 'Victor', name2: 'Me', name3: 'Me', name4: 'Victor'},
-          
-            {text1: 'hello', text2: 'hello', text3: 'who are you?', text4: 'mm.', name1: 'Mm', name2: 'Me', name3: 'Me', name4: 'Mm'},
-            
-            {text1: 'здарова', text2: 'привет', text3: 'как дела?', text4: 'щас расскажу охуеешь', name1: 'Oleg', name2: 'Me', name3: 'Me', name4: 'Oleg'},
+    addPost() {
+        let newPost = {
+            myText: this._state.mainPage.postValue,
+            countLikes: 5,
+            id: 5,
+            avatar: 'ава1.jpg',
+            alt: 'кот',
+        }
+        this._state.mainPage.postData.push(newPost)
+        this._state.mainPage.postValue = ''
+        this._rerenderEntireTree(this._state)
 
-            {text1: '', text2: '', text3: '', text4: '', name1: '', name2: '', name3: '', name4: ''},
-        ],
-        currentValue: 'aaa'
     },
-    mainPage: {
-        info: [
-            {name: 'mm', avatar: 'ава1.jpg', alt: 'кот', dateOfBirth: '2 janiary', city: 'Minsk', education: 'BSU 11', webSite: 'https://it-kamasutra.com', id: 0}
-        ],
-        postData: [
-            {myText: 'today is 05.01.2025', countLikes: '1', id: 0, avatar: 'ава1.jpg', alt: 'кот'},
-            {myText: 'i cheepful now', countLikes: '2', id: 1, avatar: 'ава1.jpg', alt: 'кот'},
-            {myText: "i'm a coder", countLikes: '999', id: 2, avatar: 'ава1.jpg', alt: 'кот'}
-        ],
-        postValue: '',
+    addSymbolToPost(receivedWord) {
+        this._state.mainPage.postValue = receivedWord 
+        this._rerenderEntireTree()
+    },
+    addSymbolToMessage: function(receivedWord) {
+        this._state.messagesPage.currentValue = receivedWord 
+        this._rerenderEntireTree()    
+    },
+    subscribe(observer) {
+        this._rerenderEntireTree = observer
+    },
+    _rerenderEntireTree() {
+
+    },
+    getState() {
+        return this._state
     }
+    
 }
-export function addPost() {
-    let newPost = {
-        myText: state.mainPage.postValue,
-        countLikes: 5,
-        id: 5,
-        avatar: 'ава1.jpg',
-        alt: 'кот',
-    }
-    state.mainPage.postData.push(newPost)
-    state.mainPage.postValue = ''
-    rerenderEntireTree(state)
-}
-export function addSymbolToPost(receivedWord) {
-    state.mainPage.postValue = receivedWord 
-    rerenderEntireTree(state)
-}
-export function addSymbolToMessage(receivedWord) {
-    state.messagesPage.currentValue = receivedWord 
-    rerenderEntireTree(state)
-}
-export function subscribe(observer) {
-    rerenderEntireTree = observer
-}
-export default state;
+export default store;

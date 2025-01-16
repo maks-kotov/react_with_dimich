@@ -3,15 +3,17 @@ import MyPosts from './myPosts/myPosts';
 import AvaAndDesc from './avaAndDesc/avaAndDesc'
 import ImgTop from './imgTop/imgTop'
 const Main = (props) => {
-
     return (
         
         <main className={classes.main}>
             <ImgTop />
             
-            <AvaAndDesc info={props.info}/>
+            <AvaAndDesc info={props.state.mainPage.info}/>
             
-            <MyPosts postValue={props.postValue} addPost={props.addPost} addSymbolToPost={props.addSymbolToPost} posts={props.postss}/>
+            <MyPosts
+            state={props.state}
+            store={props.store}
+            />
         </main>
     )
 }
