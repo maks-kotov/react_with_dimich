@@ -44,7 +44,7 @@ const Messages = (props) => {
                 </div>
                 
                 <form className={classes.form} action="#">
-                    <input onInput={addSymbol} className={classes.textarea} value={props.currentValue} ref={input}/>
+                    <input onInput={addSymbol} className={classes.input} value={props.currentValue} ref={input}/>
                     <button className={classes.button}>Send</button>
                 </form>
             </div>

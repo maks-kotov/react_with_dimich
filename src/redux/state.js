@@ -1,5 +1,7 @@
-import { rerenderEntireTree } from "../render";
-
+let rerenderEntireTree = () => {
+    console.log('state changed');
+    
+}
 const state = {
     globalData: {
         names: ['Andrew', 'Dmitry', 'Sasha', 'Sveta', 'Valera', 'Victor', 'Mm', 'Oleg']
@@ -80,5 +82,8 @@ export function addSymbolToPost(receivedWord) {
 export function addSymbolToMessage(receivedWord) {
     state.messagesPage.currentValue = receivedWord 
     rerenderEntireTree(state)
+}
+export function subscribe(observer) {
+    rerenderEntireTree = observer
 }
 export default state;

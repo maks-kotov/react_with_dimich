@@ -26,9 +26,15 @@
     align-items: center;
     height: 50px;
 }
-.textarea {
+.input {
     height: inherit;
     min-width: 420px;
+    border: 1px solid rgb(119, 119, 119);
+}
+input:active, input:hover, input:focus {
+    outline: 0;
+    outline-offset: 0;
+    border: 1px solid rgb(119, 119, 119);
 }
 .button {
     height: inherit;
