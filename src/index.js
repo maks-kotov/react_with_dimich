@@ -11,7 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const rerenderEntireTree = () => {
   root.render(
     <React.StrictMode>
-      <App store={store} state={store.getState()}/>
+      <App
+       addSymbolToPost={store.addSymbolToPost.bind(store)}
+       addSymbolToMessage={store.addSymbolToMessage.bind(store)}
+       addPost={store.addPost.bind(store)}
+      state={store.getState()}/>
     </React.StrictMode>
   );
 }

@@ -11,7 +11,7 @@ const Messages = (props) => {
     const input = React.createRef()
     const addSymbol = () => {
         const inputText = input.current.value
-        props.store.addSymbolToMessage(inputText)
+        props.addSymbolToMessage(inputText)
     }
     
     return (

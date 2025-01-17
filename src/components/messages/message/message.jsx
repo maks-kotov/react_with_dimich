@@ -1,9 +1,6 @@
 import classes from './message.module.css'
 
 const Message = (props) => {
-    if(props.name === '' && props.text === '') {
-        return ''
-    }
     const marginLeft = {
         marginLeft: '250px'
     }

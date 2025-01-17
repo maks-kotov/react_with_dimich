@@ -12,7 +12,8 @@ const Main = (props) => {
             
             <MyPosts
             state={props.state}
-            store={props.store}
+            addSymbolToPost={props.addSymbolToPost}
+            addPost={props.addPost}
             />
         </main>
     )

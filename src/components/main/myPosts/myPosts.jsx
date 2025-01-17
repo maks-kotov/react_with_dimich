@@ -16,11 +16,11 @@ const MyPosts = (props) => {
 
   const writeCurrentValue = () => {
     let symbol = newPostElement.current.value;
-    props.store.addSymbolToPost(symbol)
+    props.addSymbolToPost(symbol)
   }
 
   const addPost = (event) => {
-    props.store.addPost()
+    props.addPost()
     event.preventDefault()
   };
 
