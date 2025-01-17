@@ -1,6 +1,8 @@
 const ADD_POST = 'ADD-POST'
 const ADD_SYMBOL_TO_POST = 'ADD-SYMBOL-TO-POST'
 const ADD_SYMBOL_TO_MESSAGE = 'ADD-SYMBOL-TO-MESSAGE'
+const ADD_MESSAGE = 'ADD-MESSAGE'
+let messageId = 0
 const store = {
     _state:  {
         globalData: {
@@ -27,27 +29,27 @@ const store = {
             ],
             messages: [
                 
-                {text1: 'I am a normal popower and i can have text and everything',
-                text2: 'I am a normal pBlabllbl i can have text and everything',
-                text3: 'I am a normal popower and i can have text and everything', 
-                text4: 'I am a normal popower and i can have text and everything', 
-                name1: 'Andrew', name2: 'Me', name3: 'Me', name4: 'Andrew'},
+                // {text1: 'I am a normal popower and i can have text and everything',
+                // text2: 'I am a normal pBlabllbl i can have text and everything',
+                // text3: 'I am a normal popower and i can have text and everything', 
+                // text4: 'I am a normal popower and i can have text and everything', 
+                // name1: 'Andrew', name2: 'Me', name3: 'Me', name4: 'Andrew'},
               
-                {text1: 'я диман', text2: 'вуссап', text3: 'я масон', text4: 'ай эм сэд', name1: 'Dmitry', name2: 'Me', name3: 'Me', name4: 'Dmitry'},
+                // {text1: 'я диман', text2: 'вуссап', text3: 'я масон', text4: 'ай эм сэд', name1: 'Dmitry', name2: 'Me', name3: 'Me', name4: 'Dmitry'},
               
-                {text1: 'я sasha', text2: 'вуссап', text3: 'я масон', text4: "i'm sad", name1: 'Sasha', name2: 'Me', name3: 'Me', name4: 'Sasha'},
+                // {text1: 'я sasha', text2: 'вуссап', text3: 'я масон', text4: "i'm sad", name1: 'Sasha', name2: 'Me', name3: 'Me', name4: 'Sasha'},
               
-                {text1: 'hello', text2: 'nice to meet you', text3: 'how are you?', text4: "i'm fine", name1: 'Sveta', name2: 'Me', name3: 'Me', name4: 'Sveta'},
+                // {text1: 'hello', text2: 'nice to meet you', text3: 'how are you?', text4: "i'm fine", name1: 'Sveta', name2: 'Me', name3: 'Me', name4: 'Sveta'},
               
-                {text1: 'валер', text2: 'чё', text3: 'валер', text4: 'настало твоё время', name1: 'Valera', name2: 'Me', name3: 'Me', name4: 'Valera'},
+                // {text1: 'валер', text2: 'чё', text3: 'валер', text4: 'настало твоё время', name1: 'Valera', name2: 'Me', name3: 'Me', name4: 'Valera'},
               
-                {text1: 'здарова масон', text2: 'здарова виктор', text3: 'как оно', text4: "i am fine niga", name1: 'Victor', name2: 'Me', name3: 'Me', name4: 'Victor'},
+                // {text1: 'здарова масон', text2: 'здарова виктор', text3: 'как оно', text4: "i am fine niga", name1: 'Victor', name2: 'Me', name3: 'Me', name4: 'Victor'},
               
-                {text1: 'hello', text2: 'hello', text3: 'who are you?', text4: 'mm.', name1: 'Mm', name2: 'Me', name3: 'Me', name4: 'Mm'},
+                // {text1: 'hello', text2: 'hello', text3: 'who are you?', text4: 'mm.', name1: 'Mm', name2: 'Me', name3: 'Me', name4: 'Mm'},
                 
-                {text1: 'здарова', text2: 'привет', text3: 'как дела?', text4: 'щас расскажу охуеешь', name1: 'Oleg', name2: 'Me', name3: 'Me', name4: 'Oleg'},
+                // {text1: 'здарова', text2: 'привет', text3: 'как дела?', text4: 'щас расскажу охуеешь', name1: 'Oleg', name2: 'Me', name3: 'Me', name4: 'Oleg'},
     
-                {text1: '', text2: '', text3: '', text4: '', name1: '', name2: '', name3: '', name4: ''},
+                // {text1: '', text2: '', text3: '', text4: '', name1: '', name2: '', name3: '', name4: ''},
             ],
             currentValue: ''
         },
@@ -68,7 +70,7 @@ const store = {
     },
 
     dispatch(action) {
-        if(action.type === 'ADD-POST') {
+        if(action.type === ADD_POST) {
             let newPost = {
                 id:5,
                 myText: this._state.mainPage.postValue,
@@ -81,13 +83,26 @@ const store = {
             this._callSubscriber(this._state)
 
         }
-        else if(action.type === 'ADD-SYMBOL-TO-POST') {
+        else if(action.type === ADD_SYMBOL_TO_POST) {
             this._state.mainPage.postValue = action.receivedWord 
             this._callSubscriber()
         }
-        else if(action.type === 'ADD-SYMBOL-TO-MESSAGE') {
+        else if(action.type === ADD_SYMBOL_TO_MESSAGE) {
             this._state.messagesPage.currentValue = action.receivedWord 
             this._callSubscriber()
+        }
+        else if (action.type === ADD_MESSAGE) {
+            let newMessage = {
+                name: 'makson',
+                text: this._state.messagesPage.currentValue,
+                avatar: 'ава1.jpg',
+                id: messageId++
+            }
+            this._state.messagesPage.messages.push(newMessage)
+            this._callSubscriber(this._state)
+            this._state.messagesPage.currentValue = ''
+            console.log(this._state.messagesPage.messages);
+            
         }
     },
 
@@ -117,4 +132,9 @@ export const makeActionForAddSymbolToMessage = (inputText) => {
               type: ADD_SYMBOL_TO_MESSAGE,
               receivedWord: inputText
           }
+}
+export const makeActionForAddMessage = () => {
+    return {
+        type: ADD_MESSAGE,
+    }
 }

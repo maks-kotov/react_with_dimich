@@ -4,19 +4,24 @@ import classes from './messages.module.css'
 import ava1 from './аватарка1.jpg'
 import ava2 from './ава1.jpg'
 import React from 'react'
-import { makeActionForAddSymbolToMessage } from '../../redux/state'
+import { makeActionForAddMessage, makeActionForAddSymbolToMessage } from '../../redux/state'
 
 const Messages = (props) => {
     const namesElements = props.state.messagesPage.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} avatar={name.avatar} alt={name.alt}/>)
 
-    
+    const messagesElements = props.state.messagesPage.messages
+    .map(message => <Message name={message.name} text={message.text} avatar={message.avatar} id={message.id}/>)
 
     const input = React.createRef()
     const button = React.createRef()
     const addSymbol = () => {
         const inputText = input.current.value
         props.dispatch(makeActionForAddSymbolToMessage(inputText))
+    }
+    const addMessage = (event) => {
+        props.dispatch(makeActionForAddMessage())
+        event.preventDefault()
     }
     
     return (
@@ -31,15 +36,16 @@ const Messages = (props) => {
             
             <div>
                 <div className={classes.messagesContainer}>
-                    <Message name={props.state.messagesPage.messages.name1} text={props.state.messagesPage.messages.text1} avatar={ava1}/>     
+                    {messagesElements}
+                    {/* <Message name={props.state.messagesPage.messages.name1} text={props.state.messagesPage.messages.text1} avatar={ava1}/>     
                     <Message name={props.state.messagesPage.messages.name2} text={props.state.messagesPage.messages.text2} avatar={ava2}/>
                     <Message name={props.state.messagesPage.messages.name3} text={props.state.messagesPage.messages.text3} avatar={ava2}/>
-                    <Message name={props.state.messagesPage.messages.name4} text={props.state.messagesPage.messages.text4} avatar={ava1}/>
+                    <Message name={props.state.messagesPage.messages.name4} text={props.state.messagesPage.messages.text4} avatar={ava1}/> */}
                 </div>
                 
                 <form className={classes.form} action="#">
                     <input onInput={addSymbol} className={classes.input} value={props.state.messagesPage.currentValue} ref={input}/>
-                    <button className={classes.button} ref={button}>Send</button>
+                    <button onClick={addMessage} className={classes.button} ref={button}>Send</button>
                 </form>
             </div>
             

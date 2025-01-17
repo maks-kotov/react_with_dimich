@@ -7,7 +7,7 @@ const Message = (props) => {
 
     return (
         <div>
-            <div className={classes.message} style={props.name === 'Me' ? marginLeft : {}}>
+            <div className={classes.message} style={Number(props.id) % 2 === 0 ? marginLeft : {}}>
                         <div className={classes.circle}>
                             <img className={classes.avatar} src={props.avatar} alt="" />
                             <div className={classes.name}>{props.name}</div>    
