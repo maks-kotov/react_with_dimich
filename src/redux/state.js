@@ -13,14 +13,14 @@ const store = {
         },
         messagesPage: {
             names: [
-                {name: 'Andrew', id: 1, path: '/messages/andrew', avatar: 'аватарка1.jpg', alt: 'ava'},
-                {name: 'Dmitry', id: 2, path: '/messages/dmitry', avatar: 'ава3.jpg', alt: 'ava'},
-                {name: 'Sasha', id: 3, path: '/messages/sasha', avatar: 'ава9.jpg', alt: 'ava'},
-                {name: 'Sveta', id: 4, path: '/messages/sveta', avatar: 'ава8.jpg', alt: 'ava'},
-                {name: 'Valera', id: 5, path: '/messages/valera', avatar: 'ава5.jpg', alt: 'ava'},
-                {name: 'Victor', id: 6, path: '/messages/victor', avatar: 'ава7.jpg', alt: 'ava'},
-                {name: 'Mm', id: 7, path: '/messages/mason', avatar: 'ава1.jpg', alt: 'ava'},
-                {name: 'Oleg', id: 8, path: '/messages/oleg', avatar: 'ава2.jpg', alt: 'ava'},
+                {name: 'Andrew', id: 0, path: '/messages/andrew', avatar: 'аватарка1.jpg', alt: 'ava'},
+                {name: 'Dmitry', id: 1, path: '/messages/dmitry', avatar: 'ава3.jpg', alt: 'ava'},
+                {name: 'Sasha', id: 2, path: '/messages/sasha', avatar: 'ава9.jpg', alt: 'ava'},
+                {name: 'Sveta', id: 3, path: '/messages/sveta', avatar: 'ава8.jpg', alt: 'ava'},
+                {name: 'Valera', id: 4, path: '/messages/valera', avatar: 'ава5.jpg', alt: 'ava'},
+                {name: 'Victor', id: 5, path: '/messages/victor', avatar: 'ава7.jpg', alt: 'ava'},
+                {name: 'Mm', id: 6, path: '/messages/mason', avatar: 'ава1.jpg', alt: 'ava'},
+                {name: 'Oleg', id: 7, path: '/messages/oleg', avatar: 'ава2.jpg', alt: 'ava'},
             ],
             messages: [
                 
@@ -60,32 +60,36 @@ const store = {
             postValue: '',
         }
     },
-    addPost() {
-        let newPost = {
-            myText: this._state.mainPage.postValue,
-            countLikes: 5,
-            id: 5,
-            avatar: 'ава1.jpg',
-            alt: 'кот',
+    _callSubscriber() {
+
+    },
+
+    dispatch(action) {
+        if(action.type === 'ADD-POST') {
+            let newPost = {
+                id:5,
+                myText: this._state.mainPage.postValue,
+                countLikes: 0,
+                avatar: 'ава1.jpg',
+                alt: 'кот',
+            }
+            this._state.mainPage.postData.push(newPost)
+            this._state.mainPage.postValue = ''
+            this._callSubscriber(this._state)
+
         }
-        this._state.mainPage.postData.push(newPost)
-        this._state.mainPage.postValue = ''
-        this._rerenderEntireTree(this._state)
+        else if(action.type === 'ADD-SYMBOL-TO-POST') {
+            this._state.mainPage.postValue = action.receivedWord 
+            this._callSubscriber()
+        }
+        else if(action.type === 'ADD-SYMBOL-TO-MESSAGE') {
+            this._state.messagesPage.currentValue = action.receivedWord 
+            this._callSubscriber()
+        }
+    },
 
-    },
-    addSymbolToPost(receivedWord) {
-        this._state.mainPage.postValue = receivedWord 
-        this._rerenderEntireTree()
-    },
-    addSymbolToMessage: function(receivedWord) {
-        this._state.messagesPage.currentValue = receivedWord 
-        this._rerenderEntireTree()    
-    },
     subscribe(observer) {
-        this._rerenderEntireTree = observer
-    },
-    _rerenderEntireTree() {
-
+        this._callSubscriber = observer
     },
     getState() {
         return this._state

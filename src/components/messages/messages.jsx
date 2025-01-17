@@ -8,10 +8,12 @@ import React from 'react'
 const Messages = (props) => {
     const namesElements = props.state.messagesPage.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} avatar={name.avatar} alt={name.alt}/>)
+
+
     const input = React.createRef()
     const addSymbol = () => {
         const inputText = input.current.value
-        props.addSymbolToMessage(inputText)
+        props.dispatch({type: 'ADD-SYMBOL-TO-MESSAGE', receivedWord: inputText})
     }
     
     return (

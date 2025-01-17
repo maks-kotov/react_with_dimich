@@ -16,11 +16,11 @@ const MyPosts = (props) => {
 
   const writeCurrentValue = () => {
     let symbol = newPostElement.current.value;
-    props.addSymbolToPost(symbol)
+    props.dispatch({type: 'ADD-SYMBOL-TO-POST', receivedWord: symbol})
   }
 
   const addPost = (event) => {
-    props.addPost()
+    props.dispatch({type: 'ADD-POST'})
     event.preventDefault()
   };
 

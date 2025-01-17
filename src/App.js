@@ -9,70 +9,92 @@ import Settings from "./components/settings/settings";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 const App = (props) => {
-
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <div className="asideAndMain">
-          <Aside aside={props.state.permEls.aside}/>
+          <Aside aside={props.state.permEls.aside} />
           <Routes>
-            <Route path="/" element={<Main 
-              state={props.state}
-              addSymbolToPost={props.addSymbolToPost}
-              addPost={props.addPost}
-            />}/>
-            <Route path="/main" element={<Main 
-              state={props.state}
-              addSymbolToPost={props.addSymbolToPost}
-              addPost={props.addPost}
-            />}/>
-            <Route path="/messages" 
-            element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
+            <Route
+              path="/"
+              element={
+                <Main
+                  state={props.state}
+                  dispatch={props.dispatch}
+                  addSymbolToPost={props.addSymbolToPost}
+                  addPost={props.addPost}
+                />
+              }
+            />
+            <Route
+              path="/main"
+              element={<Main dispatch={props.dispatch} state={props.state} />}
+            />
+            <Route
+              path="/messages"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
 
-            
-            <Route path='/messages/andrew' 
-            element={<Messages names={props.state.messagesPage.names} 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}/>}/>
+            <Route
+              path="/messages/andrew"
+              element={
+                <Messages
+                  names={props.state.messagesPage.names}
+                  dispatch={props.dispatch}
+                  state={props.state}
+                />
+              }
+            />
 
-            <Route path='/messages/dmitry' 
-            element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
+            <Route
+              path="/messages/dmitry"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
 
-            <Route path='/messages/sasha' 
-            element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
-            <Route path='/messages/sveta' element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
-            <Route path='/messages/valera' element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
-            <Route path='/messages/victor' element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
-            <Route path='/messages/mason' element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
-            <Route path='/messages/oleg' element={<Messages 
-            addSymbolToMessage={props.addSymbolToMessage}
-            state={props.state}
-            />}/>
+            <Route
+              path="/messages/sasha"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
+            <Route
+              path="/messages/sveta"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
+            <Route
+              path="/messages/valera"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
+            <Route
+              path="/messages/victor"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
+            <Route
+              path="/messages/mason"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
+            <Route
+              path="/messages/oleg"
+              element={
+                <Messages dispatch={props.dispatch} state={props.state} />
+              }
+            />
           </Routes>
         </div>
       </div>
