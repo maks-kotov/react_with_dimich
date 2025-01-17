@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./myPosts.module.css";
 import Post from "./post/post";
+import { makeActionForAddPost, makeActionForAddSymbolToPost } from "../../../redux/state";
 const MyPosts = (props) => {
   const postElements = props.state.mainPage.postData.map( post => (
     <Post
@@ -12,15 +13,16 @@ const MyPosts = (props) => {
     ></Post>
   ));
 
-  let newPostElement = React.createRef();
+  
 
+  let newPostElement = React.createRef();
   const writeCurrentValue = () => {
     let symbol = newPostElement.current.value;
-    props.dispatch({type: 'ADD-SYMBOL-TO-POST', receivedWord: symbol})
+    props.dispatch(makeActionForAddSymbolToPost(symbol))
   }
 
   const addPost = (event) => {
-    props.dispatch({type: 'ADD-POST'})
+    props.dispatch(makeActionForAddPost())
     event.preventDefault()
   };
 

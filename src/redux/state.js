@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST'
+const ADD_SYMBOL_TO_POST = 'ADD-SYMBOL-TO-POST'
+const ADD_SYMBOL_TO_MESSAGE = 'ADD-SYMBOL-TO-MESSAGE'
 const store = {
     _state:  {
         globalData: {
@@ -97,3 +100,21 @@ const store = {
     
 }
 export default store;
+
+export const makeActionForAddPost = () => {
+    return {
+      type: ADD_POST
+    }
+}
+export const makeActionForAddSymbolToPost = (symbol) => {
+    return {
+      type: ADD_SYMBOL_TO_POST,
+      receivedWord: symbol
+    }
+}
+export const makeActionForAddSymbolToMessage = (inputText) => {
+          return {
+              type: ADD_SYMBOL_TO_MESSAGE,
+              receivedWord: inputText
+          }
+}

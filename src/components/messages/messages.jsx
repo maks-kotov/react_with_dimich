@@ -4,16 +4,19 @@ import classes from './messages.module.css'
 import ava1 from './аватарка1.jpg'
 import ava2 from './ава1.jpg'
 import React from 'react'
+import { makeActionForAddSymbolToMessage } from '../../redux/state'
 
 const Messages = (props) => {
     const namesElements = props.state.messagesPage.names
     .map( name => <ListItem name={name.name} id={name.id} to={name.path} avatar={name.avatar} alt={name.alt}/>)
 
+    
 
     const input = React.createRef()
+    const button = React.createRef()
     const addSymbol = () => {
         const inputText = input.current.value
-        props.dispatch({type: 'ADD-SYMBOL-TO-MESSAGE', receivedWord: inputText})
+        props.dispatch(makeActionForAddSymbolToMessage(inputText))
     }
     
     return (
@@ -36,7 +39,7 @@ const Messages = (props) => {
                 
                 <form className={classes.form} action="#">
                     <input onInput={addSymbol} className={classes.input} value={props.state.messagesPage.currentValue} ref={input}/>
-                    <button className={classes.button}>Send</button>
+                    <button className={classes.button} ref={button}>Send</button>
                 </form>
             </div>
             
