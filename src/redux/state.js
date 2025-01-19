@@ -1,8 +1,6 @@
-const ADD_POST = 'ADD-POST'
-const ADD_SYMBOL_TO_POST = 'ADD-SYMBOL-TO-POST'
-const ADD_SYMBOL_TO_MESSAGE = 'ADD-SYMBOL-TO-MESSAGE'
-const ADD_MESSAGE = 'ADD-MESSAGE'
-let messageId = 0
+import reducerMain from "./reducer-main"
+import reducerMessages from "./reducer-messages"
+
 const store = {
     _state:  {
         globalData: {
@@ -51,7 +49,7 @@ const store = {
     
                 // {text1: '', text2: '', text3: '', text4: '', name1: '', name2: '', name3: '', name4: ''},
             ],
-            currentValue: ''
+            messageValue: ''
         },
         mainPage: {
             info: [
@@ -70,40 +68,9 @@ const store = {
     },
 
     dispatch(action) {
-        if(action.type === ADD_POST) {
-            let newPost = {
-                id:5,
-                myText: this._state.mainPage.postValue,
-                countLikes: 0,
-                avatar: 'ава1.jpg',
-                alt: 'кот',
-            }
-            this._state.mainPage.postData.push(newPost)
-            this._state.mainPage.postValue = ''
-            this._callSubscriber(this._state)
-
-        }
-        else if(action.type === ADD_SYMBOL_TO_POST) {
-            this._state.mainPage.postValue = action.receivedWord 
-            this._callSubscriber()
-        }
-        else if(action.type === ADD_SYMBOL_TO_MESSAGE) {
-            this._state.messagesPage.currentValue = action.receivedWord 
-            this._callSubscriber()
-        }
-        else if (action.type === ADD_MESSAGE) {
-            let newMessage = {
-                name: 'makson',
-                text: this._state.messagesPage.currentValue,
-                avatar: 'ава1.jpg',
-                id: messageId++
-            }
-            this._state.messagesPage.messages.push(newMessage)
-            this._callSubscriber(this._state)
-            this._state.messagesPage.currentValue = ''
-            console.log(this._state.messagesPage.messages);
-            
-        }
+        this._state.mainPage = reducerMain(this._state.mainPage, action)
+        this._state.messagesPage = reducerMessages(this._state.messagesPage, action)
+        this._callSubscriber(this._state)
     },
 
     subscribe(observer) {
@@ -116,25 +83,4 @@ const store = {
 }
 export default store;
 
-export const makeActionForAddPost = () => {
-    return {
-      type: ADD_POST
-    }
-}
-export const makeActionForAddSymbolToPost = (symbol) => {
-    return {
-      type: ADD_SYMBOL_TO_POST,
-      receivedWord: symbol
-    }
-}
-export const makeActionForAddSymbolToMessage = (inputText) => {
-          return {
-              type: ADD_SYMBOL_TO_MESSAGE,
-              receivedWord: inputText
-          }
-}
-export const makeActionForAddMessage = () => {
-    return {
-        type: ADD_MESSAGE,
-    }
-}
+

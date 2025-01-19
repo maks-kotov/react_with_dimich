@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./myPosts.module.css";
 import Post from "./post/post";
-import { makeActionForAddPost, makeActionForAddSymbolToPost } from "../../../redux/state";
+import { makeActionForAddPost, makeActionForAddSymbolToPost } from "../../../redux/reducer-main";
 const MyPosts = (props) => {
   const postElements = props.state.mainPage.postData.map( post => (
     <Post

@@ -1,10 +1,8 @@
 import ListItem from './listItem/listitem'
 import Message from './message/message'
 import classes from './messages.module.css'
-import ava1 from './аватарка1.jpg'
-import ava2 from './ава1.jpg'
 import React from 'react'
-import { makeActionForAddMessage, makeActionForAddSymbolToMessage } from '../../redux/state'
+import { makeActionForAddMessage, makeActionForAddSymbolToMessage } from '../../redux/reducer-messages'
 
 const Messages = (props) => {
     const namesElements = props.state.messagesPage.names
@@ -21,6 +19,7 @@ const Messages = (props) => {
     }
     const addMessage = (event) => {
         props.dispatch(makeActionForAddMessage())
+        input.current.value = ''
         event.preventDefault()
     }
     
