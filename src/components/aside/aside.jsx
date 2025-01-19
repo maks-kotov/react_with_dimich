@@ -4,28 +4,28 @@ import AvatarAndName from "./avatarAndName/avatarAndName";
 const Aside = (props) => {
   return (
     <aside className={classes.aside}>
-      <Link to={props.aside.paths[0]} title={props.aside.titles[0]} />
-      <Link to={props.aside.paths[1]} title={props.aside.titles[1]} />
-      <Link to={props.aside.paths[2]} title={props.aside.titles[2]} />
-      <Link to={props.aside.paths[3]} title={props.aside.titles[3]} />
+      <Link to={props.asidePage.paths[0]} title={props.asidePage.titles[0]} />
+      <Link to={props.asidePage.paths[1]} title={props.asidePage.titles[1]} />
+      <Link to={props.asidePage.paths[2]} title={props.asidePage.titles[2]} />
+      <Link to={props.asidePage.paths[3]} title={props.asidePage.titles[3]} />
       <div className={classes.settings}>
-        <Link to={props.aside.paths[4]} title={props.aside.titles[4]} />
+        <Link to={props.asidePage.paths[4]} title={props.asidePage.titles[4]} />
       </div>
 
       <div className={classes.friends}>
-        <Link to={props.aside.paths[5]} title={props.aside.titles[5]} />
+        <Link to={props.asidePage.paths[5]} title={props.asidePage.titles[5]} />
         <div className={classes.mainFlexContainer}>
           <AvatarAndName
-            name={props.aside.friends[0]}
-            avatar={props.aside.avatars[0]}
+            name={props.asidePage.friends[0]}
+            avatar={props.asidePage.avatars[0]}
           />
           <AvatarAndName
-            name={props.aside.friends[1]}
-            avatar={props.aside.avatars[1]}
+            name={props.asidePage.friends[1]}
+            avatar={props.asidePage.avatars[1]}
           />
           <AvatarAndName
-            name={props.aside.friends[2]}
-            avatar={props.aside.avatars[2]}
+            name={props.asidePage.friends[2]}
+            avatar={props.asidePage.avatars[2]}
           />
         </div>
       </div>

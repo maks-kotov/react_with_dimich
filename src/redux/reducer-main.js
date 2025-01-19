@@ -1,7 +1,19 @@
 const ADD_POST = 'ADD-POST'
 const ADD_SYMBOL_TO_POST = 'ADD-SYMBOL-TO-POST'
 
-const reducerMain = (state, action) => {
+let initionalState = {
+    info: [
+        {name: 'mm', avatar: 'ава1.jpg', alt: 'кот', dateOfBirth: '2 janiary', city: 'Minsk', education: 'BSU 11', webSite: 'https://it-kamasutra.com', id: 0}
+    ],
+    postData: [
+        {myText: 'today is 05.01.2025', countLikes: '1', id: 0, avatar: 'ава1.jpg', alt: 'кот'},
+        {myText: 'i cheepful now', countLikes: '2', id: 1, avatar: 'ава1.jpg', alt: 'кот'},
+        {myText: "i'm a coder", countLikes: '999', id: 2, avatar: 'ава1.jpg', alt: 'кот'}
+    ],
+    postValue: '',
+}
+
+const reducerMain = (state=initionalState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {

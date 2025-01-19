@@ -6,13 +6,11 @@ const store = {
         globalData: {
             names: ['Andrew', 'Dmitry', 'Sasha', 'Sveta', 'Valera', 'Victor', 'Mm', 'Oleg']
         },
-        permEls: {
-            aside: {
+        asidePage: {
                 titles: ['Profile', 'Messages', 'News', 'Music', 'Settings', 'Friends'],
                 paths: ['/main', '/messages', '/news', '/music', '/settings', '/friends'],
                 avatars: ['аватарка1.jpg', 'ава9.jpg', 'ава8.jpg'],
                 friends: ['Andrew', 'Sasha', 'Sveta']
-            }
         },
         messagesPage: {
             names: [
@@ -67,18 +65,18 @@ const store = {
 
     },
 
-    dispatch(action) {
-        this._state.mainPage = reducerMain(this._state.mainPage, action)
-        this._state.messagesPage = reducerMessages(this._state.messagesPage, action)
-        this._callSubscriber(this._state)
-    },
-
     subscribe(observer) {
         this._callSubscriber = observer
     },
     getState() {
         return this._state
-    }
+    },
+    
+    dispatch(action) {
+        this._state.mainPage = reducerMain(this._state.mainPage, action)
+        this._state.messagesPage = reducerMessages(this._state.messagesPage, action)
+        this._callSubscriber(this._state)
+    },
     
 }
 export default store;

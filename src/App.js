@@ -14,7 +14,7 @@ const App = (props) => {
       <div className="app-wrapper">
         <Header />
         <div className="asideAndMain">
-          <Aside aside={props.state.permEls.aside} />
+          <Aside asidePage={props.state.asidePage} />
           <Routes>
             <Route
               path="/"
