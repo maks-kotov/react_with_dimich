@@ -1,30 +1,11 @@
 import React from "react";
 import classes from "./myPosts.module.css";
-import Post from "./post/post";
-import { makeActionForAddPost, makeActionForAddSymbolToPost } from "../../../redux/reducer-main";
 const MyPosts = (props) => {
-  const postElements = props.state.mainPage.postData.map( post => (
-    <Post
-      myText={post.myText}
-      countLikes={post.countLikes}
-      id={post.id}
-      avatar={post.avatar}
-      alt={post.alt}
-    ></Post>
-  ));
-
   
-
-  let newPostElement = React.createRef();
-  const writeCurrentValue = () => {
-    let symbol = newPostElement.current.value;
-    props.dispatch(makeActionForAddSymbolToPost(symbol))
-  }
-
-  const addPost = (event) => {
-    props.dispatch(makeActionForAddPost())
-    event.preventDefault()
-  };
+  let newPostSymbol = React.createRef(); //параметр, нужный для написания символа
+  const myFunc = () => { // 
+      props.writeCurrentValue(newPostSymbol)
+}
 
   return (
     <div className={classes.myPostsContainer}>
@@ -33,16 +14,16 @@ const MyPosts = (props) => {
         <textarea
           className={classes.textarea}
           placeholder="your news..."
-          ref={newPostElement}
-          onInput={writeCurrentValue}
-          value={props.state.mainPage.postValue} 
+          ref={newPostSymbol}
+          onInput={myFunc}
+          value={props.valueTextarea} 
         />
-        <button onClick={addPost} className={classes.button}>
+        <button onClick={props.addPost} className={classes.button}>
           Add post
         </button>
       </form>
 
-      {postElements}
+      {props.postElements}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import News from "./components/news/news";
 import Music from "./components/music/music";
 import Settings from "./components/settings/settings";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import ContainerMessages from "./components/messages/containerMessages";
 
 const App = (props) => {
   return (
@@ -34,7 +35,7 @@ const App = (props) => {
             <Route
               path="/messages"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
             <Route path="/news" element={<News />} />

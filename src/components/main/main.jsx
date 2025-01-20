@@ -1,7 +1,7 @@
 import classes from './main.module.css'
-import MyPosts from './myPosts/myPosts';
 import AvaAndDesc from './avaAndDesc/avaAndDesc'
 import ImgTop from './imgTop/imgTop'
+import ContainerMyPosts from './myPosts/containerMyPosts';
 const Main = (props) => {
     return (
         
@@ -10,10 +10,8 @@ const Main = (props) => {
             
             <AvaAndDesc info={props.state.mainPage.info}/>
             
-            <MyPosts
-            state={props.state}
-            dispatch={props.dispatch}
-            />
+            <ContainerMyPosts dispatch={props.dispatch}
+            state={props.state}/>
         </main>
     )
 }
