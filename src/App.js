@@ -45,10 +45,7 @@ const App = (props) => {
             <Route
               path="/messages/andrew"
               element={
-                <Messages
-                  names={props.state.messagesPage.names}
-                  dispatch={props.dispatch}
-                  state={props.state}
+                <ContainerMessages dispatch={props.dispatch} state={props.state}
                 />
               }
             />
@@ -56,44 +53,44 @@ const App = (props) => {
             <Route
               path="/messages/dmitry"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
 
             <Route
               path="/messages/sasha"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
             <Route
               path="/messages/sveta"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
             <Route
               path="/messages/valera"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
             <Route
               path="/messages/victor"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
             <Route
               path="/messages/mason"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
             <Route
               path="/messages/oleg"
               element={
-                <Messages dispatch={props.dispatch} state={props.state} />
+                <ContainerMessages dispatch={props.dispatch} state={props.state} />
               }
             />
           </Routes>
