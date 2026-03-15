@@ -4,7 +4,7 @@
 
 ## 🐖 Деплой
 
-Вы можете посмотреть сайт тут: [https://react-first-nine-theta.vercel.app/](https://react-first-nine-theta.vercel.app/).
+Вы можете посмотреть сайт тут: [https://react-with-dimich.vercel.app/](https://react-with-dimich.vercel.app/).
 
 ## 🤓 О проекте
 
